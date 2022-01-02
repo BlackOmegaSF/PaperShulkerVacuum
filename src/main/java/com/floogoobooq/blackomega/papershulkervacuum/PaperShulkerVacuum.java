@@ -30,7 +30,7 @@ public class PaperShulkerVacuum extends JavaPlugin implements Listener {
         //getLogger().info("EntityPickupItemEvent called");
         if(event.getEntity() instanceof Player) {
             final Player player = (Player) event.getEntity();
-            ItemStack pickedUpItem = (ItemStack)event.getItem().getItemStack();
+            ItemStack pickedUpItem = event.getItem().getItemStack();
             //int amtRemaining = pickedUpItem.getAmount();
 
             //if(player.getInventory().getItemInOffHand() != null) {
@@ -87,7 +87,7 @@ public class PaperShulkerVacuum extends JavaPlugin implements Listener {
 
                         if (shulkerModifiedFlag) {
                             offHandMeta.setBlockState(shulker);
-                            ItemStack newShulker = (ItemStack) player.getInventory().getItemInOffHand();
+                            ItemStack newShulker = player.getInventory().getItemInOffHand();
                             newShulker.setItemMeta(offHandMeta);
                             player.getInventory().setItemInOffHand(newShulker);
                         }
