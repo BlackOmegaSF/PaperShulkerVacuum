@@ -102,8 +102,11 @@ public class PaperShulkerVacuum extends JavaPlugin implements Listener {
             player.getInventory().setItemInOffHand(newShulker);
         }
 
+        //Cancel original pickup event
         event.setCancelled(true);
         event.getItem().remove();
+
+
 
     }
 }
