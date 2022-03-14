@@ -13,6 +13,7 @@ import org.bukkit.inventory.meta.BlockStateMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Map;
+import java.util.Random;
 
 public class PaperShulkerVacuum extends JavaPlugin implements Listener {
 
@@ -108,7 +109,8 @@ public class PaperShulkerVacuum extends JavaPlugin implements Listener {
         event.setCancelled(true);
         event.getItem().remove();
 
-        player.getServer().playSound(Sound.sound(Key.key("entity.item.pickup"), Sound.Source.PLAYER, 1f, 1f), player);
+        Random random = new Random();
+        player.getServer().playSound(Sound.sound(Key.key("entity.item.pickup"), Sound.Source.PLAYER, 1f, (random.nextFloat()*0.5f) + 1f), player);
 
     }
 }
