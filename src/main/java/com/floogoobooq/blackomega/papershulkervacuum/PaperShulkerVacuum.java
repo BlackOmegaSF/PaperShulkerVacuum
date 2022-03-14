@@ -1,5 +1,7 @@
 package com.floogoobooq.blackomega.papershulkervacuum;
 
+import net.kyori.adventure.key.Key;
+import net.kyori.adventure.sound.Sound;
 import org.bukkit.block.ShulkerBox;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -106,7 +108,7 @@ public class PaperShulkerVacuum extends JavaPlugin implements Listener {
         event.setCancelled(true);
         event.getItem().remove();
 
-
+        player.getServer().playSound(Sound.sound(Key.key("entity.item.pickup"), Sound.Source.PLAYER, 1f, 1f), player);
 
     }
 }
