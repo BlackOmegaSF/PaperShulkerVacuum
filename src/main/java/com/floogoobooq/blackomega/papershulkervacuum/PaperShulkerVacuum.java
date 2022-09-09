@@ -105,7 +105,7 @@ public class PaperShulkerVacuum extends JavaPlugin implements Listener {
         event.getItem().remove();
 
         Random random = new Random();
-        player.getServer().playSound(Sound.sound(Key.key("entity.item.pickup"), Sound.Source.PLAYER, 0.5f, (random.nextFloat()*0.5f) + 1f), player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ());
+        player.getServer().playSound(Sound.sound(Key.key("entity.item.pickup"), Sound.Source.PLAYER, 0.25f, (random.nextFloat()*0.5f) + 1f), player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ());
 
     }
 }
