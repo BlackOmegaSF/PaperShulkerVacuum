@@ -30,31 +30,26 @@ public class PaperShulkerVacuum extends JavaPlugin implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     public void onEntityPickupItem(final EntityPickupItemEvent event) {
         //getLogger().info("EntityPickupItemEvent called");
-        if (!(event.getEntity() instanceof Player)) {
+        if (!(event.getEntity() instanceof final Player player)) {
             //Not a player picking up the item, do nothing
             return;
         }
-        final Player player = (Player) event.getEntity();
         ItemStack pickedUpItem = event.getItem().getItemStack();
         //int amtRemaining = pickedUpItem.getAmount();
 
-        if (!(player.getInventory().getItemInOffHand().getItemMeta() instanceof BlockStateMeta)) {
+        if (!(player.getInventory().getItemInOffHand().getItemMeta() instanceof BlockStateMeta offHandMeta)) {
             //Item in offhand has no BlockStateMeta, so it's not a shulker box
             return;
         }
 
-        BlockStateMeta offHandMeta = (BlockStateMeta) player.getInventory().getItemInOffHand().getItemMeta();
-
-        if (!(offHandMeta.getBlockState() instanceof ShulkerBox)) {
+        if (!(offHandMeta.getBlockState() instanceof ShulkerBox shulker)) {
             //Item in offhand isn't a shulker box, do nothing
             return;
         }
 
-        ShulkerBox shulker = (ShulkerBox) offHandMeta.getBlockState();
         Boolean shulkerModifiedFlag = Boolean.TRUE;
 
-        if(pickedUpItem.getItemMeta() instanceof BlockStateMeta) {
-            BlockStateMeta pickedUpMeta = (BlockStateMeta) pickedUpItem.getItemMeta();
+        if(pickedUpItem.getItemMeta() instanceof BlockStateMeta pickedUpMeta) {
             if(pickedUpMeta.getBlockState() instanceof ShulkerBox) {
                 //getLogger().info("Skipping box, giving to player");
                 shulkerModifiedFlag = Boolean.FALSE;
