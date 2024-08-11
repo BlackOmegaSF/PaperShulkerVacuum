@@ -22,11 +22,6 @@ public class PaperShulkerVacuum extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(this, this);
     }
 
-    @Override
-    public void onDisable() {
-
-    }
-
     @EventHandler(priority = EventPriority.HIGH)
     public void onEntityPickupItem(final EntityPickupItemEvent event) {
         //getLogger().info("EntityPickupItemEvent called");
