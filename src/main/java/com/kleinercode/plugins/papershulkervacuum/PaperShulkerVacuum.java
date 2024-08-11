@@ -1,4 +1,4 @@
-package com.floogoobooq.blackomega.papershulkervacuum;
+package com.kleinercode.plugins.papershulkervacuum;
 
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.sound.Sound;
