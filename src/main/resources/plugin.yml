@@ -1,4 +1,4 @@
 name: PaperShulkerVacuum
-version: 3.0.0
-main: com.floogoobooq.blackomega.papershulkervacuum.PaperShulkerVacuum
-api-version: 1.19
+version: 3.1.0
+main: com.kleinercode.plugins.papershulkervacuum.PaperShulkerVacuum
+api-version: 1.21
